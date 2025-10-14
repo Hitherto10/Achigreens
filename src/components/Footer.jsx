@@ -5,34 +5,37 @@ import {Images} from "../images.jsx";
 export default function Footer() {
 
     return (
-        <footer className="bg-teal-900 text-white pt-16 font-[Outfit] pb-8 px-4">
+        <footer className="bg-teal-900 text-white pt-10 sm:pt-14 lg:pt-16 font-[Outfit] pb-8 px-4">
+            {/* CHANGED FOR MOBILE: reduced top padding */}
             <div className="max-w-7xl mx-auto">
-                <div className="grid grid-cols-4 gap-12 mb-12">
+                {/* CHANGED FOR MOBILE: responsive grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-10 lg:mb-12">
                     {/* Company Info */}
                     <div className="col-span-1">
                         <div className="flex items-center gap-2 mb-6">
-
+                            {/* CHANGED FOR MOBILE: smaller logo */}
                                 <img
                                     src={`${Images.logo_2}`}
                                     alt="Logo"
-                                    className={`w-12`}
+                                    className={`w-10 sm:w-12`}
                                 />
-                            <span className="text-2xl font-serif">AchiGreens</span>
+                            {/* CHANGED FOR MOBILE: smaller text */}
+                            <span className="text-xl sm:text-2xl font-serif">AchiGreens</span>
                         </div>
                         <p className="text-gray-300 text-sm leading-relaxed mb-6">
                             We have been operating for over a decade, providing top-notch services to our clients and building a strong track record.
                         </p>
                         <div className="flex gap-3">
-                            <a href="#" className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
                                 <Facebook size={18} />
                             </a>
-                            <a href="#" className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
                                 <Twitter size={18} />
                             </a>
-                            <a href="#" className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
                                 <Instagram size={18} />
                             </a>
-                            <a href="#" className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
                                 <Linkedin size={18} />
                             </a>
                         </div>
@@ -40,8 +43,10 @@ export default function Footer() {
 
                     {/* Quick Links */}
                     <div>
-                        <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
-                        <ul className="space-y-3">
+                        {/* CHANGED FOR MOBILE: font size */}
+                        <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">Quick Links</h3>
+                        {/* CHANGED FOR MOBILE: tighter spacing */}
+                        <ul className="space-y-2 sm:space-y-3">
                             <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Home</a></li>
                             <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">About Us</a></li>
                             <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Products</a></li>
@@ -52,8 +57,10 @@ export default function Footer() {
 
                     {/* Services */}
                     <div>
-                        <h3 className="text-xl font-semibold mb-6">Services</h3>
-                        <ul className="space-y-3">
+                        {/* CHANGED FOR MOBILE: font size */}
+                        <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">Services</h3>
+                        {/* CHANGED FOR MOBILE: tighter spacing */}
+                        <ul className="space-y-2 sm:space-y-3">
                             <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Agricultural Consultancy</a></li>
                             <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Health & Nutrition</a></li>
                             <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Training & Outreach</a></li>
@@ -64,8 +71,10 @@ export default function Footer() {
 
                     {/* Contact Info */}
                     <div>
-                        <h3 className="text-xl font-semibold mb-6">Contact Info</h3>
-                        <ul className="space-y-4">
+                        {/* CHANGED FOR MOBILE: font size */}
+                        <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">Contact Info</h3>
+                        {/* CHANGED FOR MOBILE: tighter spacing */}
+                        <ul className="space-y-3 sm:space-y-4">
                             <li className="flex items-start gap-3">
                                 <MapPin className="text-green-400 flex-shrink-0 mt-1" size={20} />
                                 <span className="text-gray-300 text-sm">Plot 1&3 Majemi Close Mahuta, Kaduna, 800283</span>
@@ -83,13 +92,15 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="border-t border-teal-800 pt-8 flex justify-between items-center">
-                    <p className="text-gray-400 text-sm">
+                {/* CHANGED FOR MOBILE: stack */}
+                <div className="border-t border-teal-800 pt-6 lg:pt-8 flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center">
+                    {/* CHANGED FOR MOBILE: font size */}
+                    <p className="text-gray-400 text-xs sm:text-sm">
                         © 2025 Achigreens. All rights reserved.
                     </p>
-                    <div className="flex gap-8">
-                        <a href="#" className="text-gray-400 hover:text-green-400 text-sm transition-colors">Privacy Policy</a>
-                        <a href="#" className="text-gray-400 hover:text-green-400 text-sm transition-colors">Terms of Service</a>
+                    <div className="flex gap-6 sm:gap-8">
+                        <a href="#" className="text-gray-400 hover:text-green-400 text-xs sm:text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" className="text-gray-400 hover:text-green-400 text-xs sm:text-sm transition-colors">Terms of Service</a>
                     </div>
                 </div>
             </div>

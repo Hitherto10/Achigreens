@@ -10,12 +10,13 @@ export default function Header() {
     return (
         <>
             <div className="bg-yellow-400 py-2 px-4 font-[Outfit]">
-                <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
+                {/* CHANGED FOR MOBILE: stack and smaller text */}
+                <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 text-xs sm:text-sm ">
                     <div className="flex items-center gap-2 text-gray-800">
                         <span>📍</span>
                         <span>Plot 1&3 Majemi Close Mahuta, Kaduna, 800283</span>
                     </div>
-                    <div className="flex items-center gap-6 text-gray-800">
+                    <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-gray-800">
                         <div className="flex items-center gap-2">
                             <Phone size={16} />
                             <a href="tel:+2348177111731" className="font-semibold text-gray-800 hover:underline">+234 817 711 1731</a>
@@ -27,21 +28,27 @@ export default function Header() {
                     </div>
                 </div>
             </div>
+
+
+            {/* CHANGED FOR MOBILE: tighter padding */}
             <nav className="bg-white top-0 shadow-sm font-[Outfit]">
-                <div className="max-w-7xl mx-auto px-4 py-4">
+                <div className="max-w-7xl mx-auto px-4 py-3 sm:py-4">
                     <div className="flex items-center justify-between">
                         {/* Logo */}
                         <div className="flex items-center gap-2">
+                            {/* CHANGED FOR MOBILE: smaller logo */}
                                 <img
                                     src={`${Images.logo_2}`}
                                     alt="Logo"
-                                    className={`w-12`}
+                                    className={`w-10 sm:w-12`}
                                 />
-                            <span className="text-2xl font-serif text-teal-900">AchiGreens</span>
+                            {/* CHANGED FOR MOBILE: smaller text */}
+                            <span className="text-xl sm:text-2xl font-serif text-teal-900">AchiGreens</span>
                         </div>
 
                         {/* Navigation Items */}
-                        <div className="flex items-center gap-8">
+                        {/* CHANGED FOR MOBILE: hide on mobile */}
+                        <div className="hidden md:flex items-center gap-6 lg:gap-8">
                             {navItems.map((item) => (
                                 <div
                                     key={item.label}
@@ -56,8 +63,19 @@ export default function Header() {
                                 </div>
                             ))}
 
-                            <button className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full flex items-center gap-2 transition-colors">
+                            {/* CHANGED FOR MOBILE: hide on mobile */}
+                            <button className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full hidden md:inline-flex items-center gap-2 transition-colors">
                                 Contact Us →
+                            </button>
+                        </div>
+
+                        {/* TODO: Placeholder for mobile hamburger menu - no JS logic implemented */}
+                        <div className="md:hidden">
+                            <button className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none">
+                                <span className="sr-only">Open main menu</span>
+                                <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
                             </button>
                         </div>
                     </div>
