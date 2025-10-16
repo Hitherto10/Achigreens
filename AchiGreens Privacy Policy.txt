@@ -1,0 +1,331 @@
+# PRIVACY POLICY
+
+**Last Updated: October 16, 2025**
+
+## 1. INTRODUCTION
+
+AchiGreens LLC ("Company", "we", "us", "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you visit our website https://achigreens.com/ ("Website", "Service") and when you purchase products from us.
+
+This Privacy Policy applies to all users of our Website and customers who purchase our products. By accessing or using our Website, you acknowledge that you have read, understood, and agree to be bound by this Privacy Policy. If you do not agree with this Privacy Policy, you must not access or use our Website.
+
+**Company Information:**
+- Legal Name: AchiGreens LLC
+- Business Address: Plot 1&3 Majemi Close by Benode Avenue, Mahuta, Nigeria
+- Email: info@achigreens.com
+- Country of Establishment: Nigeria
+
+## 2. INFORMATION WE COLLECT
+
+### 2.1 Personal Information We Collect
+
+When you visit our Website or make a purchase, we may collect the following types of personal information from you:
+
+**Contact Information:**
+- First name
+- Last name
+- Email address
+- Phone number
+- Shipping address
+- Billing address (if different from shipping address)
+
+**Transaction Information:**
+- Payment information (processed securely by third-party payment processors)
+- Purchase history
+- Order details
+
+**Technical Information:**
+- IP address
+- Browser type and version
+- Device information
+- Operating system
+- Referring website addresses
+- Pages viewed and time spent on pages
+- Date and time stamps
+
+### 2.2 How We Collect Information
+
+We collect information in the following ways:
+
+**Information You Provide Directly:**
+- When you make a purchase or place an order
+- When you contact us via email or phone
+- When you sign up to receive emails from us
+- When you provide feedback or communicate with us
+
+**Information Collected Automatically:**
+- When you visit our Website, certain information is automatically collected through cookies and similar technologies
+- Server logs automatically record information about your visit
+
+### 2.3 Information We Do NOT Collect
+
+- We do NOT use Google Analytics or other third-party analytics tools
+- We do NOT collect information from children under the age of 13
+- We do NOT collect sensitive personal information such as racial or ethnic origin, political opinions, religious beliefs, health information, or biometric data unless required for order fulfillment
+- We do NOT use tracking technologies for advertising purposes
+
+## 3. HOW WE USE YOUR INFORMATION
+
+We use the personal information we collect for the following purposes:
+
+### 3.1 Order Processing and Fulfillment
+- To process and fulfill your orders
+- To communicate with you about your orders
+- To arrange for shipping and delivery
+- To handle returns, exchanges, and refunds
+- To send order confirmations and shipping notifications
+
+### 3.2 Customer Service
+- To respond to your inquiries and requests
+- To provide customer support
+- To resolve disputes and troubleshoot problems
+- To communicate with you about our products and services
+
+### 3.3 Email Communications
+- To send you transactional emails related to your purchases
+- To send you marketing and promotional emails (only if you have opted in)
+- To send you important updates about our policies or services
+- To send you newsletters and product announcements (with your consent)
+
+### 3.4 Business Operations
+- To improve our Website and user experience
+- To detect, prevent, and address technical issues
+- To protect against fraud and unauthorized transactions
+- To comply with legal obligations
+- To enforce our Terms and Conditions
+
+### 3.5 Legal Compliance
+- To comply with applicable laws and regulations
+- To respond to legal processes and government requests
+- To protect our rights, privacy, safety, or property
+- To enforce our legal rights and prevent illegal activities
+
+## 4. LEGAL BASIS FOR PROCESSING (NIGERIAN LAW)
+
+Under the Nigeria Data Protection Regulation (NDPR) and other applicable Nigerian laws, we process your personal information based on the following legal grounds:
+
+- **Consent:** You have given us explicit consent to process your personal information for specific purposes (e.g., receiving marketing emails)
+- **Contract Performance:** Processing is necessary to fulfill our contractual obligations to you (e.g., completing your order)
+- **Legal Obligation:** Processing is necessary to comply with applicable laws and regulations
+- **Legitimate Interests:** Processing is necessary for our legitimate business interests, provided these interests do not override your fundamental rights and freedoms
+
+## 5. COOKIES AND TRACKING TECHNOLOGIES
+
+### 5.1 What Are Cookies?
+
+Cookies are small text files that are placed on your device when you visit our Website. They help us provide you with a better experience by remembering your preferences and understanding how you use our Website.
+
+### 5.2 Types of Cookies We Use
+
+**Essential Cookies:**
+- These cookies are necessary for the Website to function properly
+- They enable core functionality such as security, network management, and accessibility
+- You cannot opt out of these cookies
+
+**Functional Cookies:**
+- These cookies remember your preferences and choices
+- They enhance the functionality and personalization of the Website
+
+**Session Cookies:**
+- These temporary cookies are deleted when you close your browser
+- They help us maintain your shopping cart and navigation
+
+### 5.3 What We Do NOT Use
+
+- We do NOT use Google Analytics or similar analytics services
+- We do NOT use advertising cookies or tracking pixels
+- We do NOT use remarketing or retargeting cookies
+- We do NOT share cookie data with third-party advertisers
+
+### 5.4 Managing Cookies
+
+You can control and manage cookies through your browser settings. Most browsers allow you to:
+- View and delete cookies
+- Block all cookies
+- Block third-party cookies
+- Clear cookies when you close your browser
+
+Please note that disabling cookies may affect the functionality of our Website.
+
+## 6. HOW WE SHARE YOUR INFORMATION
+
+We do not sell, rent, or trade your personal information to third parties. We may share your information only in the following limited circumstances:
+
+### 6.1 Service Providers
+
+We may share your information with trusted third-party service providers who assist us in operating our Website and conducting our business, including:
+- Payment processors (to process your payments securely)
+- Shipping and delivery companies (to fulfill your orders)
+- Email service providers (to send transactional and marketing emails)
+- Cloud storage providers (to store data securely)
+
+These service providers are contractually obligated to protect your information and use it only for the specific purposes we authorize.
+
+### 6.2 Legal Requirements
+
+We may disclose your information if required to do so by law or in response to:
+- Court orders, subpoenas, or other legal processes
+- Requests from government authorities or law enforcement agencies
+- Legal obligations under Nigerian or international law
+- Protection of our rights, property, or safety, or that of our users or the public
+
+### 6.3 Business Transfers
+
+In the event of a merger, acquisition, reorganization, bankruptcy, or sale of assets, your personal information may be transferred to the successor entity. We will notify you of any such change and the choices you may have regarding your information.
+
+### 6.4 With Your Consent
+
+We may share your information with third parties when you have given us explicit consent to do so.
+
+## 7. INTERNATIONAL DATA TRANSFERS
+
+Your information may be transferred to and maintained on servers located outside of Nigeria. By using our Website, you consent to the transfer of your information to countries that may have different data protection laws than Nigeria. We will take appropriate measures to ensure your information receives an adequate level of protection in accordance with this Privacy Policy and applicable laws.
+
+## 8. DATA SECURITY
+
+We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:
+
+- Secure Socket Layer (SSL) encryption for data transmission
+- Secure servers and databases
+- Restricted access to personal information
+- Regular security assessments and updates
+- Employee training on data protection
+
+However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security.
+
+## 9. DATA RETENTION
+
+We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law.
+
+**Retention Periods:**
+- Transaction and order information: Retained for at least 7 years for tax and accounting purposes
+- Email marketing lists: Retained until you unsubscribe
+- Customer service records: Retained for 3 years after the last interaction
+- Website logs and technical data: Retained for 12 months
+
+When your personal information is no longer needed, we will securely delete or anonymize it in accordance with applicable laws.
+
+## 10. YOUR RIGHTS AND CHOICES
+
+Under Nigerian law (NDPR) and applicable international laws, you have the following rights regarding your personal information:
+
+### 10.1 Right to Access
+
+You have the right to request access to the personal information we hold about you. We will provide you with a copy of your data in a commonly used electronic format.
+
+### 10.2 Right to Rectification
+
+You have the right to request that we correct any inaccurate or incomplete personal information we hold about you.
+
+### 10.3 Right to Erasure (Right to be Forgotten)
+
+You have the right to request that we delete your personal information, subject to certain legal exceptions (e.g., if we need to retain the information for legal compliance or to complete a transaction).
+
+### 10.4 Right to Restrict Processing
+
+You have the right to request that we restrict the processing of your personal information under certain circumstances.
+
+### 10.5 Right to Data Portability
+
+You have the right to request that we transfer your personal information to another organization or directly to you in a structured, commonly used, and machine-readable format.
+
+### 10.6 Right to Object
+
+You have the right to object to our processing of your personal information for direct marketing purposes or when processing is based on legitimate interests.
+
+### 10.7 Right to Withdraw Consent
+
+If we are processing your personal information based on your consent, you have the right to withdraw that consent at any time.
+
+### 10.8 Right to Lodge a Complaint
+
+You have the right to lodge a complaint with the Nigeria Data Protection Commission (NDPC) or other relevant supervisory authority if you believe we have violated your data protection rights.
+
+### 10.9 How to Exercise Your Rights
+
+To exercise any of these rights, please contact us at info@achigreens.com. We will respond to your request within 30 days or as required by applicable law. We may need to verify your identity before processing your request.
+
+## 11. EMAIL COMMUNICATIONS AND OPT-OUT
+
+### 11.1 Types of Emails We Send
+
+**Transactional Emails:**
+- Order confirmations
+- Shipping notifications
+- Delivery confirmations
+- Payment receipts
+- Account notifications
+- Customer service responses
+
+You cannot opt out of transactional emails as they are necessary to complete your orders and provide customer service.
+
+**Marketing Emails:**
+- Promotional offers
+- New product announcements
+- Newsletters
+- Special sales and discounts
+
+### 11.2 Opting Out of Marketing Emails
+
+You can opt out of receiving marketing emails at any time by:
+- Clicking the "unsubscribe" link at the bottom of any marketing email
+- Contacting us at info@achigreens.com with your request
+- Updating your email preferences (if available)
+
+We will process your opt-out request within 10 business days. Please note that even after opting out of marketing emails, you will still receive transactional emails related to your orders.
+
+## 12. CHILDREN'S PRIVACY
+
+Our Website and services are not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe that your child under 13 has provided us with personal information, please contact us immediately at info@achigreens.com. If we discover that we have collected personal information from a child under 13, we will take steps to delete that information as soon as possible.
+
+If you are under 18 years of age, you must obtain permission from your parent or legal guardian before using our Website or making any purchases.
+
+## 13. LINKS TO THIRD-PARTY WEBSITES
+
+Our Website may contain links to third-party websites, services, or applications that are not owned or controlled by us. This Privacy Policy does not apply to those third-party websites. We are not responsible for the privacy practices or content of third-party websites.
+
+We encourage you to review the privacy policies of any third-party websites you visit. Your interactions with third-party websites are governed by their respective privacy policies, not this Privacy Policy.
+
+## 14. CHANGES TO THIS PRIVACY POLICY
+
+We reserve the right to update or modify this Privacy Policy at any time. When we make changes, we will:
+- Update the "Last Updated" date at the top of this Privacy Policy
+- Post the revised Privacy Policy on our Website
+- Notify you of material changes via email (if we have your email address) or through a prominent notice on our Website
+
+Your continued use of our Website after the effective date of the revised Privacy Policy constitutes your acceptance of the changes. We encourage you to review this Privacy Policy periodically to stay informed about how we are protecting your information.
+
+## 15. DATA PROTECTION OFFICER
+
+In compliance with the Nigeria Data Protection Regulation (NDPR), we have designated a data protection officer responsible for overseeing our data protection practices. If you have questions about this Privacy Policy or our data practices, you may contact our data protection officer at info@achigreens.com.
+
+## 16. CONTACT INFORMATION
+
+If you have any questions, concerns, or complaints about this Privacy Policy or our privacy practices, please contact us:
+
+**AchiGreens LLC**  
+Plot 1&3 Majemi Close by Benode Avenue  
+Mahuta, Nigeria  
+Email: info@achigreens.com
+
+We will respond to your inquiry within 30 days or as required by applicable law.
+
+## 17. NIGERIAN DATA PROTECTION COMPLIANCE
+
+We are committed to complying with the Nigeria Data Protection Regulation (NDPR) and all applicable Nigerian data protection laws. We:
+- Process personal data lawfully, fairly, and in a transparent manner
+- Collect personal data only for specified, explicit, and legitimate purposes
+- Ensure personal data is adequate, relevant, and limited to what is necessary
+- Maintain accurate and up-to-date personal data
+- Retain personal data only for as long as necessary
+- Implement appropriate security measures to protect personal data
+- Respect the rights of data subjects under Nigerian law
+
+## 18. CONSENT
+
+By using our Website and providing your personal information, you consent to the collection, use, and disclosure of your information as described in this Privacy Policy. You may withdraw your consent at any time by contacting us at info@achigreens.com, subject to legal and contractual restrictions and reasonable notice.
+
+---
+
+**END OF PRIVACY POLICY**
+
+**Acknowledgment:** By using the AchiGreens Website, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.
