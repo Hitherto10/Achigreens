@@ -3,6 +3,7 @@
 
 
 import {Images} from "../images.jsx";
+import ginger_product_picture from "../assets/Images/ginger_product_picture.jpg";
 
 export const navItems = [
   { key: 'home', label: 'Home', hasDropdown: true },
@@ -23,7 +24,7 @@ export const products = [
     id: 1,
     name: 'Tomato',
     description: 'Agriculture farming are the essential',
-    price: 'ask for price',
+    price: '300/kg',
     image: Images.tomato,
     category: 'Fresh',
   },
@@ -31,7 +32,7 @@ export const products = [
     id: 2,
     name: 'Radish',
     description: 'Agriculture farming are the essential',
-    price: 'ask for price',
+    price: '500/kg',
     image: Images.radish,
     category: 'Fresh',
   },
@@ -39,7 +40,7 @@ export const products = [
     id: 3,
     name: 'Bell Peppers',
     description: 'Agriculture farming are the essential',
-    price: 'ask for price',
+    price: '1600/kg',
     image: Images.bell_peppers,
     category: 'Vegetables',
     featured: true,
@@ -48,7 +49,7 @@ export const products = [
     id: 4,
     name: 'Bitter Gourd',
     description: 'Agriculture farming are the essential',
-    price: 'ask for price',
+    price: '2500/kg',
     image: Images.bitter_gourd,
     category: 'Organic',
   },
@@ -56,16 +57,16 @@ export const products = [
     id: 5,
     name: 'Corn',
     description: 'Agriculture farming are the essential',
-    price: 'ask for price',
+    price: '1833/500g',
     image: Images.corn,
     category: 'Vegetables',
   },
   {
     id: 6,
-    name: 'Kales',
+    name: 'Ginger',
     description: 'Agriculture farming are the essential',
-    price: 'ask for price',
-    image: 'https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?w=300&h=300&fit=crop',
+    price: '600/kg',
+    image: Images.ginger_product_picture,
     category: 'Vegetables',
   },
 ];

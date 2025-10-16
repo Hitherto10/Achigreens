@@ -3,7 +3,7 @@ import { Star } from 'lucide-react';
 
 function ProductCardBase({ product, onAddToCart }) {
   return (
-    <div className="bg-white rounded-3xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-all duration-300" role="article" aria-label={`Product ${product.name}`}>
+    <div className="bg-white font-[Outfit] rounded-3xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-all duration-300" role="article" aria-label={`Product ${product.name}`}>
       <div className="relative">
           {/* CHANGED FOR MOBILE: responsive image height */}
         <img
@@ -33,7 +33,7 @@ function ProductCardBase({ product, onAddToCart }) {
             onClick={() => onAddToCart?.(product)}
             aria-label={`Add ${product.name} to cart`}
           >
-            Add To Cart
+            Place an Order
           </button>
         </div>
       </div>

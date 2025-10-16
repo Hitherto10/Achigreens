@@ -14,6 +14,7 @@ import corn from './assets/Images/corn.jpg'
 import tomato from './assets/Images/tomato.jpg'
 import radish from './assets/Images/radish.jpg'
 import bitter_gourd from './assets/Images/bitter_gourd.jpg'
+import ginger_product_picture from './assets/Images/ginger_product_picture.jpg'
 
 import gallery_horizontal_1 from './assets/Images/gallery_horizontal_1.jpg'
 import gallery_horizontal_2 from './assets/Images/gallery_horizontal_2.png'
@@ -33,6 +34,7 @@ export const Images = {
     logo_2,
     bell_peppers,
     corn,
+    ginger_product_picture,
     tomato,
     radish,
     bitter_gourd,

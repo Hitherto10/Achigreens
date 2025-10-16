@@ -1,5 +1,5 @@
 import React from 'react';
-import {Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter} from "lucide-react";
+import {Facebook, Instagram , Linkedin, Mail, MapPin, Phone, Twitter} from "lucide-react";
 import {Images} from "../images.jsx";
 
 export default function Footer() {
@@ -30,14 +30,13 @@ export default function Footer() {
                                 <Facebook size={18} />
                             </a>
                             <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
-                                <Twitter size={18} />
-                            </a>
-                            <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
                                 <Instagram size={18} />
                             </a>
-                            <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
-                                <Linkedin size={18} />
+
+                            <a className="w-9 h-9 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                                <Phone size={18} />
                             </a>
+
                         </div>
                     </div>
 
@@ -96,7 +95,7 @@ export default function Footer() {
                 <div className="border-t border-teal-800 pt-6 lg:pt-8 flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center">
                     {/* CHANGED FOR MOBILE: font size */}
                     <p className="text-gray-400 text-xs sm:text-sm">
-                        © 2025 Achigreens. All rights reserved.
+                        © 2025 Achigreens. All rights reserved. Website by PrimeWave Tech.
                     </p>
                     <div className="flex gap-6 sm:gap-8">
                         <a href="#" className="text-gray-400 hover:text-green-400 text-xs sm:text-sm transition-colors">Privacy Policy</a>

@@ -114,15 +114,6 @@ export default function Home() {
                                 <button className="border-2 font-[Outfit] border-green-500 text-green-600 px-4 py-2 rounded-full hover:bg-green-50 transition-colors">{/* CHANGED FOR MOBILE: smaller padding */}
                                     Contact Us →
                                 </button>
-                                <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-500 rounded-full flex items-center justify-center">{/* CHANGED FOR MOBILE: smaller icon container */}
-                                        <Phone className="text-white" size={18} />{/* CHANGED FOR MOBILE: icon size */}
-                                    </div>
-                                    <div>
-                                        <p className="text-xs sm:text-sm font-[Outfit] text-gray-600">Need help?</p>
-                                        <a href="tel:+2348177111731" className="font-semibold text-gray-800 hover:underline">+234 817 711 1731</a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
