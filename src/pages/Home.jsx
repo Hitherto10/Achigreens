@@ -4,7 +4,8 @@ import { Images } from '../images';
 import { categories, products as productsData, testimonials as testimonialsData, services as servicesData } from '../data/siteContent';
 import ProductCard from '../components/ProductCard';
 import ServicesSection from '../components/ServicesSection';
-
+import { Mail, MessageSquare, User, Briefcase } from 'lucide-react';
+import ContactForm from "../components/Contact_form.jsx";
 
 export default function Home() {
     const [activeCategory, setActiveCategory] = useState('All');
@@ -30,24 +31,7 @@ export default function Home() {
         { number: "03", title: "Water the plants" },
         { number: "04", title: "Fertilize the Farm" }
     ];
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-    });
-
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
-
-    const handleSubmit = () => {
-        console.log('Form submitted:', formData);
-        alert('Form submitted successfully!');
-    };
+    
     const nextSlide = () => {
         setCurrentSlide((prev) => (prev + 1) % testimonials.length);
     };
@@ -55,6 +39,7 @@ export default function Home() {
     const prevSlide = () => {
         setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
     };
+
     const stats = [
         {
             number: '200',
@@ -670,61 +655,31 @@ export default function Home() {
                             />
                         </div>
 
-                        {/* Right Side - Contact Form */}
-                        <div className={`border col-span-2 lg:col-span-1 border-gray-200 shadow-lg h-full items-center rounded-3xl p-12`}>
-                            <p className="text-green-500 font-medium font-[Mali] text-xl mb-4">Contact</p>
-                            <h2 className="text-5xl font-serif text-gray-800 mb-10">
-                                Get Touch Here
-                            </h2>
+                        <div className="col-span-1 bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100">
+                            {/* Header */}
+                            <div className="mb-8">
+                                <p className="text-green-500 font-medium text-lg mb-2">Get In Touch</p>
+                                <h2 className="text-4xl md:text-5xl font-serif text-gray-800 mb-3">
+                                    Let's Work Together
+                                </h2>
+                            </div>
 
-                            <div className="space-y-5">
-                                {/* Name and Email Row */}
-                                <div className="grid grid-cols-2 gap-4">
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        placeholder="Name"
-                                        value={formData.name}
-                                        onChange={handleChange}
-                                        className="w-full px-6 py-4 rounded-full border-2 border-gray-200 focus:border-green-500 focus:outline-none transition-colors"
-                                    />
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        placeholder="E-mail"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        className="w-full px-6 py-4 rounded-full border-2 border-gray-200 focus:border-green-500 focus:outline-none transition-colors"
-                                    />
-                                </div>
 
-                                {/* Subject */}
-                                <input
-                                    type="text"
-                                    name="subject"
-                                    placeholder="Subject"
-                                    value={formData.subject}
-                                    onChange={handleChange}
-                                    className="w-full px-6 py-4 rounded-full border-2 border-gray-200 focus:border-green-500 focus:outline-none transition-colors"
-                                />
 
-                                {/* Message */}
-                                <textarea
-                                    name="message"
-                                    placeholder="Message"
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                    rows="5"
-                                    className="w-full px-6 py-4 rounded-3xl border-2 border-gray-200 focus:border-green-500 focus:outline-none transition-colors resize-none"
-                                />
-
-                                {/* Submit Button */}
-                                <button
-                                    onClick={handleSubmit}
-                                    className="bg-green-500 hover:bg-green-600 text-white font-medium px-10 py-4 rounded-full transition-colors shadow-lg"
-                                >
-                                    Submit Now
-                                </button>
+                            <ContactForm />
+                            {/* Privacy Policy Notice */}
+                            <div className="mt-6 pt-6 border-t border-gray-200">
+                                <p className="text-xs text-gray-500 leading-relaxed">
+                                    By submitting this form, you agree to our{' '}
+                                    <a href="/privacy-policy" className="text-green-600 hover:text-green-700 underline font-medium">
+                                        Privacy Policy
+                                    </a>{' '}
+                                    and{' '}
+                                    <a href="/terms" className="text-green-600 hover:text-green-700 underline font-medium">
+                                        Terms & Conditions
+                                    </a>
+                                    . We respect your privacy and will only use your information to respond to your inquiry and provide relevant updates about our services.
+                                </p>
                             </div>
                         </div>
                     </div>

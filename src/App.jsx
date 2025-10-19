@@ -4,14 +4,20 @@ import viteLogo from '/vite.svg'
 import Home from "./pages/Home.jsx";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
+import {Routes, Route } from "react-router-dom";
+import PrivacyPolicyPage from "./pages/PrivacyPolicy.jsx";
+import TermsConditionsPage from "./pages/TandC.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
         <Header />
-            <Home />
+            <Routes >
+                <Route path={`/`} element={<Home />}/>
+                <Route path={`/privacy-policy`} element={<PrivacyPolicyPage />}/>
+                <Route path={`/terms`} element={<TermsConditionsPage />}/>
+            </Routes>
         <Footer />
     </>
   )

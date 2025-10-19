@@ -6,9 +6,9 @@ import {Images} from "../images.jsx";
 import ginger_product_picture from "../assets/Images/ginger_product_picture.jpg";
 
 export const navItems = [
-  { key: 'home', label: 'Home', hasDropdown: true },
-  { key: 'about', label: 'About Us', hasDropdown: false },
-  { key: 'products', label: 'Products', hasDropdown: false },
+  { key: 'home',  label: 'Home', hasDropdown: false },
+  { key: 'about',  label: 'About Us', hasDropdown: false },
+  { key: 'products',  label: 'Products', hasDropdown: true },
   { key: 'service', label: 'Service', hasDropdown: true },
   { key: 'contact', label: 'Contact', hasDropdown: false },
 ];
