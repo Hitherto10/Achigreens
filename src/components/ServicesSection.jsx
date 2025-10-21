@@ -21,7 +21,7 @@ export default function ServicesSection({ services = [] }) {
                         <button
                             key={service.key}
                             onClick={() => setSelectedService(service.key)}
-                            className={`w-auto md:w-full text-left p-5 sm:p-6 rounded-2xl transition-all duration-300 group ${
+                            className={`md:max-w-full sm:border md:border-none  border-gray-100 w-auto text-left py-1 px-3 m-2 md:p-6 rounded-2xl transition-all duration-300 group ${
                                 isSelected
                                     ? 'bg-white shadow-xl scale-105'
                                     : 'bg-white/50 hover:bg-white hover:shadow-lg'
@@ -29,29 +29,30 @@ export default function ServicesSection({ services = [] }) {
                         >
                             <div className="flex items-center gap-4">
                                 {/* Number Badge */}
-                                {/*TODO: Might change numbering to icons*/}
-                                <div className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center font-bold text-lg transition-all duration-300 ${
-                                    isSelected
-                                        ? 'bg-green-500 text-white scale-110'
-                                        : 'bg-gray-200 text-gray-600 group-hover:bg-green-100 group-hover:text-green-600'
-                                }`}>
-                                    {String(index + 1).padStart(2)}
+                                <div className={`hidden md:block`}>
+                                    <div className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center font-bold text-lg transition-all duration-300 ${
+                                        isSelected
+                                            ? 'bg-green-500 text-white scale-110'
+                                            : 'bg-gray-200 text-gray-600 group-hover:bg-green-100 group-hover:text-green-600'
+                                    }`}>
+                                        {String(index + 1).padStart(2)}
+                                    </div>
                                 </div>
 
+
                                 {/* Service Info */}
-                                <div className="flex-1 hidden md:block">
-                                    <h3 className={`text-lg font-bold transition-colors ${
+                                <div className="flex-1 block">
+                                    <h3 className={`text-md md:text-lg  font-bold transition-colors ${
                                         isSelected ? 'text-gray-800' : 'text-gray-700 group-hover:text-gray-800'
                                     }`}>
                                         {service.title}
                                     </h3>
-                                    <p className="text-sm text-gray-500 mt-1">Click to view details</p>
+                                    <p className="text-sm hidden md:block text-gray-500 mt-1">Click to view details</p>
                                 </div>
 
                             </div>
                         </button>
                     </>
-
                 );
               })}
             </div>
@@ -62,8 +63,8 @@ export default function ServicesSection({ services = [] }) {
                   <div className="bg-white rounded-3xl shadow-2xl overflow-hidden h-full flex flex-col">
 
                     {/* Header/Title Section (Replaces Image) */}
-                    <div className="p-6 sm:p-8 pb-4 sm:pb-6 bg-green-500/10 border-b-2 border-green-500/30">{/* CHANGED FOR MOBILE: tighter padding */}
-                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-teal-900 leading-snug">{/* CHANGED FOR MOBILE: responsive heading */}
+                    <div className="p-6 sm:p-8 pb-4 sm:pb-6">{/* CHANGED FOR MOBILE: tighter padding */}
+                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-gray-800 leading-snug">{/* CHANGED FOR MOBILE: responsive heading */}
                         {currentService.title}
                       </h3>
                     </div>

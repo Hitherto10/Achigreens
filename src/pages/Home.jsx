@@ -231,21 +231,21 @@ export default function Home() {
                         <div className="grid gap-4 ">
                             <div>
                                 <img
-                                    className="h-auto max-w-full rounded-lg object-cover object-center"
+                                    className="h-auto transition-all duration-300 hover:scale-105 max-w-full rounded-lg object-cover object-center"
                                     src={`${Images.gallery_horizontal_1}`}
                                     alt="gallery-photo"
                                 />
                             </div>
                             <div>
                                 <img
-                                    className="h-auto max-w-full rounded-lg object-cover object-center "
+                                    className="h-auto transition-all duration-300 hover:scale-105 max-w-full rounded-lg object-cover object-center "
                                     src={`${Images.gallery_vertical_1}`}
                                     alt="gallery-photo"
                                 />
                             </div>
                             <div>
                                 <img
-                                    className="h-auto max-w-full rounded-lg object-cover object-center"
+                                    className="h-auto transition-all duration-300 hover:scale-105 max-w-full rounded-lg object-cover object-center"
                                     src={`${Images.gallery_horizontal_2}`}
                                     alt="gallery-photo"
                                 />
@@ -254,21 +254,21 @@ export default function Home() {
                         <div className="grid gap-4">
                             <div>
                                 <img
-                                    className="h-auto max-w-full rounded-lg object-cover object-center"
+                                    className="h-auto transition-all duration-300 hover:scale-105 max-w-full rounded-lg object-cover object-center"
                                     src={`${Images.gallery_vertical_2}`}
                                     alt="gallery-photo"
                                 />
                             </div>
                             <div>
                                 <img
-                                    className="h-auto max-w-full rounded-lg object-cover object-center"
+                                    className="h-auto transition-all duration-300 hover:scale-105 max-w-full rounded-lg object-cover object-center"
                                     src={`${Images.gallery_horizontal_3}`}
                                     alt="gallery-photo"
                                 />
                             </div>
                             <div>
                                 <img
-                                    className="h-auto max-w-full rounded-lg object-cover object-center "
+                                    className="h-auto transition-all duration-300 hover:scale-105 max-w-full rounded-lg object-cover object-center "
                                     src={`${Images.gallery_horizontal_4}`}
                                     alt="gallery-photo"
                                 />
@@ -277,21 +277,21 @@ export default function Home() {
                         <div className="grid gap-4">
                             <div>
                                 <img
-                                    className="h-auto max-w-full rounded-lg object-cover object-center"
+                                    className="h-auto transition-all duration-300 hover:scale-105 max-w-full rounded-lg object-cover object-center"
                                     src={`${Images.gallery_horizontal_5}`}
                                     alt="gallery-photo"
                                 />
                             </div>
                             <div>
                                 <img
-                                    className="h-auto max-w-full rounded-lg object-cover object-center "
+                                    className="h-auto transition-all duration-300 hover:scale-105 max-w-full rounded-lg object-cover object-center "
                                     src={`${Images.gallery_horizontal_6}`}
                                     alt="gallery-photo"
                                 />
                             </div>
                             <div>
                                 <img
-                                    className="h-auto max-w-full rounded-lg object-cover object-center"
+                                    className="h-auto transition-all duration-300 hover:scale-105 max-w-full rounded-lg object-cover object-center"
                                     src={`${Images.gallery_vertical_3}`}
 
                                     alt="gallery-photo"
@@ -303,7 +303,7 @@ export default function Home() {
                         <div className="grid gap-4">
                             <div>
                                 <img
-                                    className="h-auto max-w-full rounded-lg object-cover object-center"
+                                    className="h-auto transition-all duration-300 hover:scale-105 max-w-full rounded-lg object-cover object-center"
                                     src={`${Images.gallery_vertical_4}`}
 
                                     alt="gallery-photo"
@@ -311,7 +311,7 @@ export default function Home() {
                             </div>
                             <div>
                                 <img
-                                    className="h-auto max-w-full rounded-lg object-cover object-center"
+                                    className="h-auto transition-all duration-300 hover:scale-105 max-w-full rounded-lg object-cover object-center"
                                     src={`${Images.gallery_vertical_5}`}
                                     alt="gallery-photo"
                                 />
