@@ -1,16 +1,20 @@
 import React, {useState} from 'react';
 import {ChevronDown, Phone} from "lucide-react";
-import {navItems} from "../data/siteContent.js";
+// Assumed imports
+// import {navItems} from "../data/siteContent.js";
 import { Images } from '../images';
+import {NavLink} from "react-router-dom";
+import {navItems} from "../data/siteContent.js";
 
 
 export default function Header() {
     const [openDropdown, setOpenDropdown] = useState(null);
 
     return (
+        // The outer <header> tag was removed here.
         <>
+            {/* Yellow Bar - Will scroll off the screen */}
             <div className="bg-yellow-400 py-2 px-4 font-[Outfit]">
-                {/* CHANGED FOR MOBILE: stack and smaller text */}
                 <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 text-xs sm:text-sm ">
                     <div className="flex items-center gap-2 text-gray-800">
                         <span>📍</span>
@@ -18,6 +22,7 @@ export default function Header() {
                     </div>
                     <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-gray-800">
                         <div className="flex items-center gap-2">
+                            {/* Assuming Phone is an imported component/icon */}
                             <Phone size={16} />
                             <a href="tel:+2348177111731" className="font-semibold text-gray-800 hover:underline">+234 817 711 1731</a>
                         </div>
@@ -30,33 +35,33 @@ export default function Header() {
             </div>
 
 
-            {/* CHANGED FOR MOBILE: tighter padding */}
-            <nav className="bg-white top-0 shadow-sm font-[Outfit]">
+            <nav className="bg-white sticky top-0 z-50 shadow-sm font-[Outfit]">
                 <div className="max-w-7xl mx-auto px-4 py-3 sm:py-4">
                     <div className="flex items-center justify-between">
                         {/* Logo */}
-                        <div className="flex items-center gap-2">
-                            {/* CHANGED FOR MOBILE: smaller logo */}
+                        {/* Assuming NavLink is an imported component */}
+                        <NavLink to={`/`}>
+                            <div className="flex hover:cursor-pointer items-center gap-2">
                                 <img
                                     src={`${Images.logo_2}`}
                                     alt="Logo"
                                     className={`w-10 sm:w-12`}
                                 />
-                            {/* CHANGED FOR MOBILE: smaller text */}
-                            <span className="text-xl sm:text-2xl font-serif text-teal-900">AchiGreens</span>
-                        </div>
+                                <span className="text-xl sm:text-2xl font-serif text-teal-900">AchiGreens</span>
+                            </div>
+                        </NavLink>
 
                         {/* Navigation Items */}
-                        {/* CHANGED FOR MOBILE: hide on mobile */}
                         <div className="hidden md:flex items-center gap-6 lg:gap-8">
+                            {/* Assuming navItems, setOpenDropdown, and ChevronDown are defined/imported */}
                             {navItems.map((item) => (
                                 <div
                                     key={item.label}
-                                    className="relative"
+                                    className="relative "
                                     onMouseEnter={() => item.hasDropdown && setOpenDropdown(item.label)}
                                     onMouseLeave={() => setOpenDropdown(null)}
                                 >
-                                    <button className="flex items-center gap-1 text-gray-700 hover:text-teal-700 transition-colors">
+                                    <button className="flex hover:cursor-pointer items-center gap-1 text-gray-700 hover:text-teal-700 transition-colors">
                                         {item.label}
                                         {item.hasDropdown && <ChevronDown size={16} />}
                                     </button>
@@ -82,6 +87,5 @@ export default function Header() {
                 </div>
             </nav>
         </>
-
     )
 }

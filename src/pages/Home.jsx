@@ -1,11 +1,14 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { Phone, Users, Award, CheckCircle2, ThumbsUp, ChevronLeft, ChevronRight} from 'lucide-react';
+import { Target, Eye, TrendingUp, Leaf } from 'lucide-react';
 import { Images } from '../images';
 import { categories, products as productsData, testimonials as testimonialsData, services as servicesData } from '../data/siteContent';
 import ProductCard from '../components/ProductCard';
 import ServicesSection from '../components/ServicesSection';
 import { Mail, MessageSquare, User, Briefcase } from 'lucide-react';
 import ContactForm from "../components/Contact_form.jsx";
+import ProductOrderModal from "../components/ProductOrderModal.jsx";
+import Counter from "../components/Counter.jsx";
 
 export default function Home() {
     const [activeCategory, setActiveCategory] = useState('All');
@@ -31,7 +34,7 @@ export default function Home() {
         { number: "03", title: "Water the plants" },
         { number: "04", title: "Fertilize the Farm" }
     ];
-    
+
     const nextSlide = () => {
         setCurrentSlide((prev) => (prev + 1) % testimonials.length);
     };
@@ -42,23 +45,23 @@ export default function Home() {
 
     const stats = [
         {
-            number: '200',
-            label: 'Team member',
+            number: '150',
+            label: 'Team members',
             icon: <Users size={32} className="text-green-500" />
         },
         {
-            number: '300k',
-            label: 'Winning award',
+            number: '15',
+            label: 'Winning awards',
             icon: <Award size={32} className="text-green-500" />
         },
         {
-            number: '100',
-            label: 'Complete project',
+            number: '120',
+            label: 'Completed projects',
             icon: <CheckCircle2 size={32} className="text-green-500" />
         },
         {
-            number: '900',
-            label: 'Client review',
+            number: '54',
+            label: 'Client reviews',
             icon: <ThumbsUp size={32} className="text-green-500" />
         }
     ];
@@ -76,7 +79,20 @@ export default function Home() {
     const toggleSection = (section) => {
         setExpandedSection(expandedSection === section ? null : section);
     };
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
+    const categories = ['All', 'Fresh', 'Organic', 'Vegetables'];
+
+    const handlePlaceOrder = (product) => {
+        setSelectedProduct(product);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setSelectedProduct(null);
+    };
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Hero Section */}
@@ -91,13 +107,13 @@ export default function Home() {
                                 <span className="text-teal-700">all the way</span> to<br />
                                 <span className="text-gray-500 font-light">consumption</span>
                             </h1>
-                            <p className="text-gray-600 max-w-md font-[Montserrat] text-sm sm:text-base">{/* CHANGED FOR MOBILE: font size */}
+                            <p className="text-gray-600 max-w-md font-[Outfit] text-sm sm:text-base">{/* CHANGED FOR MOBILE: font size */}
                                 A dynamic and versatile farming business, that has proved itself in several aspects of farming
                                 over time.
                             </p>
                             <div className="flex items-center gap-4 sm:gap-6 pt-2 sm:pt-4">{/* CHANGED FOR MOBILE: tighter spacing */}
                                 <button className="border-2 font-[Outfit] border-green-500 text-green-600 px-4 py-2 rounded-full hover:bg-green-50 transition-colors">{/* CHANGED FOR MOBILE: smaller padding */}
-                                    Contact Us →
+                                    Find Out More →
                                 </button>
                             </div>
                         </div>
@@ -140,32 +156,43 @@ export default function Home() {
                     <div className=" p-3 flex flex-wrap lg:flex-nowrap  gap-8 md:gap-16 items-center sm:flex-row-reverse">
 
                         {/* Right Side - Content */}
-                        <div className="space-y-4 lg:flex-1 sm:space-y-6">{/* CHANGED FOR MOBILE: tighter spacing */}
-                            <p className="text-green-500 font-medium font-[Mali] text-base sm:text-lg">{/* CHANGED FOR MOBILE: smaller text */}Why Choose Us</p>
+                        <div className="space-y-4 lg:flex-1 sm:space-y-6">
+                            <p className="text-green-500 font-medium font-[Mali] text-base sm:text-lg">Why Choose Us</p>
 
                             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-serif text-teal-900 leading-tight">{/* CHANGED FOR MOBILE: responsive heading */}
                                 A Dynamic Partner in Farming, Wellness, and Sustainability
                             </h2>
 
-                            <p className="text-gray-600 leading-relaxed font-[Montserrat] text-sm sm:text-base">{/* CHANGED FOR MOBILE: font size */}
-                                We are a flexible farming business with proven experience across multiple aspects of agriculture. From specialized consultancy services for individuals and NGOs to our dedication to healthy living and sustainability, we offer solutions that extend far beyond the farm gate.
+                            <p className="text-gray-600 leading-relaxed font-[Outfit] text-sm sm:text-base">{/* CHANGED FOR MOBILE: font size */}
+                                We are a flexible farming business with proven experience across multiple sectors of agriculture. From specialized consultancy services for individuals and NGOs to our dedication to healthy living and sustainability, we offer solutions that extend far beyond the farm gate.
                             </p>
 
                             {/* Checklist Items */}
-                            <div className="space-y-3 sm:space-y-4 pt-2 sm:pt-4">{/* CHANGED FOR MOBILE: tighter spacing */}
-                                <div className="flex items-center gap-2 sm:gap-3 font-[Montserrat]">
-                                    <CheckCircle2 className="text-green-500 flex-shrink-0" size={20} />{/* CHANGED FOR MOBILE: icon size */}
-                                    <p className="text-gray-700 text-sm sm:text-base">Comprehensive Consultancy (from soil testing to waste management).</p>
+                            <div className="space-y-3 sm:space-y-4 font-[Outfit]">
+                                <div className="flex items-start gap-3">
+                                    <CheckCircle2 className="text-green-500 flex-shrink-0 mt-1" size={20} />{/* CHANGED FOR MOBILE: smaller icon */}
+                                    <div>
+                                        <p className="font-semibold text-gray-800">Proven Quality</p>
+                                        <p className="text-sm text-gray-600">A track record of high-quality produce and successful projects.</p>
+                                    </div>
                                 </div>
 
-                                <div className="flex items-center gap-2 sm:gap-3 font-[Montserrat]">
-                                    <CheckCircle2 className="text-green-500 flex-shrink-0" size={20} />
-                                    <p className="text-gray-700 text-sm sm:text-base">Specialists in Exotic Fruits and Vegetables, including on-demand growing.</p>
+
+                                <div className="flex items-start gap-3">
+                                    <CheckCircle2 className="text-green-500 flex-shrink-0 mt-1" size={20} />{/* CHANGED FOR MOBILE: smaller icon */}
+                                    <div>
+                                        <p className="font-semibold text-gray-800">Sustainable Approach</p>
+                                        <p className="text-sm text-gray-600">Committed to eco-friendly and responsible farming methods.</p>
+                                    </div>
                                 </div>
 
-                                <div className="flex items-center gap-2 sm:gap-3 font-[Montserrat]">
-                                    <CheckCircle2 className="text-green-500 flex-shrink-0" size={20} />
-                                    <p className="text-gray-700 text-sm sm:text-base">Extending service to Dietary Wellness and Beauty Therapy using fresh produce.</p>
+                                {/* Benefit 4 */}
+                                <div className="flex items-start gap-3">
+                                    <CheckCircle2 className="text-green-500 flex-shrink-0 mt-1" size={20} />{/* CHANGED FOR MOBILE: smaller icon */}
+                                    <div>
+                                        <p className="font-semibold text-gray-800">Community Focused</p>
+                                        <p className="text-sm text-gray-600">Extending value through training, outreach, and local partnership.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -322,18 +349,19 @@ export default function Home() {
 
                     {/* Stats Section */}
                     <div className="bg-white rounded-3xl shadow-lg p-6 sm:p-8 lg:p-12 mt-10 sm:mt-12 lg:mt-16">{/* CHANGED FOR MOBILE: tighter spacing */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">{/* CHANGED FOR MOBILE: responsive grid */}
+                        <div className="grid grid-cols-2 font-serif lg:grid-cols-4 gap-6 lg:gap-8">{/* CHANGED FOR MOBILE: responsive grid */}
                             {stats.map((stat, index) => (
                                 <div key={index} className="text-center">
                                     <div className="flex justify-center mb-3 sm:mb-4">
                                         {stat.icon}
                                     </div>
                                     <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-1 sm:mb-2">{/* CHANGED FOR MOBILE: responsive number */}
-                                        {stat.number}<span className="text-green-500">+</span>
+                                        <Counter finalNumber={stat.number} duration={2500} /><span className="text-green-500">+</span>
                                     </div>
                                     <p className="text-gray-600 text-xs sm:text-sm">{stat.label}</p>
                                 </div>
                             ))}
+
                         </div>
                     </div>
                 </div>
@@ -382,7 +410,7 @@ export default function Home() {
                                     </div>
 
                                     {/* Testimonial Text */}
-                                    <p className="text-gray-600 font-[Montserrat] text-sm leading-relaxed">
+                                    <p className="text-gray-600 font-[Outfit] text-sm leading-relaxed">
                                         {testimonials[currentSlide].text}
                                     </p>
                                 </div>
@@ -444,7 +472,7 @@ export default function Home() {
                                     </div>
                                     <div>
                                         <div className="text-4xl font-bold text-gray-800">4k+</div>
-                                        <div className="text-sm text-gray-700 font-medium">Happy Customer</div>
+                                        <div className="text-sm text-gray-700 font-medium">Happy Customers</div>
                                     </div>
                                 </div>
                             </div>
@@ -455,148 +483,213 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/*AchiGreens Partners*/}
-                <section className="relative py-12 px-4">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="bg-gray-100 p-6 md:p-8 rounded-3xl">
-                            {/* Desktop/Tablet - Static Row */}
-                            <div className="hidden md:flex items-center justify-between gap-6 lg:gap-12">
-                                {partners.map((partner, index) => (
-                                    <div
-                                        key={index}
-                                        className="flex-1 flex items-center justify-center group cursor-pointer min-w-0"
-                                    >
-                                        <div className="text-center">
-                                            <div className="flex items-center justify-center gap-2 opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                                                <svg
-                                                    className="w-6 h-6 lg:w-8 lg:h-8 text-gray-600 flex-shrink-0"
-                                                    fill="currentColor"
-                                                    viewBox="0 0 24 24"
-                                                >
-                                                    <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.07-.24C8.1 17.77 9.5 14 17 14V8zm-5 12c0-2.76 2.24-5 5-5v-3c-4.42 0-8 3.58-8 8h3z" />
-                                                </svg>
-                                                <span className="text-lg lg:text-2xl font-light text-gray-700 tracking-wide truncate">
-                                                    {partner.text}
-                                                </span>
-                                            </div>
-                                            <p className="text-xs text-gray-400 mt-1">Loremipsum</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
 
-                            {/* Mobile - Horizontal Scrollable Carousel */}
-                            <div className="md:hidden">
-                                <div className="flex gap-8 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
-                                    {partners.map((partner, index) => (
-                                        <div
-                                            key={index}
-                                            className="flex-shrink-0 w-48 snap-center"
-                                        >
-                                            <div className="text-center p-4">
-                                                <div className="flex flex-col items-center justify-center gap-2">
-                                                    <svg
-                                                        className="w-8 h-8 text-gray-600"
-                                                        fill="currentColor"
-                                                        viewBox="0 0 24 24"
-                                                    >
-                                                        <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.07-.24C8.1 17.77 9.5 14 17 14V8zm-5 12c0-2.76 2.24-5 5-5v-3c-4.42 0-8 3.58-8 8h3z" />
-                                                    </svg>
-                                                    <span className="text-xl font-light text-gray-700 tracking-wide">
-                                                        {partner.text}
-                                                    </span>
-                                                    <p className="text-xs text-gray-400">Loremipsum</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-
-                                {/* Scroll Hint */}
-                                <div className="text-center mt-2">
-                                    <p className="text-xs text-gray-400">← Swipe to see more →</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Trust Badge */}
-                        <div className="text-center mt-6">
-                            <p className="text-sm text-gray-500">
-                                Trusted by <span className="font-semibold text-green-600">{partners.length}+</span> industry leaders
-                            </p>
-                        </div>
-                    </div>
-
-                    <style jsx>{`
-                            .scrollbar-hide::-webkit-scrollbar {
-                              display: none;
-                            }
-                            .scrollbar-hide {
-                              -ms-overflow-style: none;
-                              scrollbar-width: none;
-                            }
-                        `}
-                    </style>
-                </section>
             </section>
 
+            {/*/!*AchiGreens Partners*!/*/}
+            {/*<section className="relative py-12 px-4">*/}
+            {/*    <div className="max-w-7xl mx-auto">*/}
+            {/*        <div className="bg-gray-100 p-6 md:p-8 rounded-3xl">*/}
+            {/*            /!* Desktop/Tablet - Static Row *!/*/}
+            {/*            <div className="hidden md:flex items-center justify-between gap-6 lg:gap-12">*/}
+            {/*                {partners.map((partner, index) => (*/}
+            {/*                    <div*/}
+            {/*                        key={index}*/}
+            {/*                        className="flex-1 flex items-center justify-center group cursor-pointer min-w-0"*/}
+            {/*                    >*/}
+            {/*                        <div className="text-center">*/}
+            {/*                            <div className="flex items-center justify-center gap-2 opacity-60 group-hover:opacity-100 transition-opacity duration-300">*/}
+            {/*                                <svg*/}
+            {/*                                    className="w-6 h-6 lg:w-8 lg:h-8 text-gray-600 flex-shrink-0"*/}
+            {/*                                    fill="currentColor"*/}
+            {/*                                    viewBox="0 0 24 24"*/}
+            {/*                                >*/}
+            {/*                                    <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.07-.24C8.1 17.77 9.5 14 17 14V8zm-5 12c0-2.76 2.24-5 5-5v-3c-4.42 0-8 3.58-8 8h3z" />*/}
+            {/*                                </svg>*/}
+            {/*                                <span className="text-lg lg:text-2xl font-light text-gray-700 tracking-wide truncate">*/}
+            {/*                                        {partner.text}*/}
+            {/*                                    </span>*/}
+            {/*                            </div>*/}
+            {/*                            <p className="text-xs text-gray-400 mt-1">Loremipsum</p>*/}
+            {/*                        </div>*/}
+            {/*                    </div>*/}
+            {/*                ))}*/}
+            {/*            </div>*/}
+
+            {/*            /!* Mobile - Horizontal Scrollable Carousel *!/*/}
+            {/*            <div className="md:hidden">*/}
+            {/*                <div className="flex gap-8 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">*/}
+            {/*                    {partners.map((partner, index) => (*/}
+            {/*                        <div*/}
+            {/*                            key={index}*/}
+            {/*                            className="flex-shrink-0 w-48 snap-center"*/}
+            {/*                        >*/}
+            {/*                            <div className="text-center p-4">*/}
+            {/*                                <div className="flex flex-col items-center justify-center gap-2">*/}
+            {/*                                    <svg*/}
+            {/*                                        className="w-8 h-8 text-gray-600"*/}
+            {/*                                        fill="currentColor"*/}
+            {/*                                        viewBox="0 0 24 24"*/}
+            {/*                                    >*/}
+            {/*                                        <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.07-.24C8.1 17.77 9.5 14 17 14V8zm-5 12c0-2.76 2.24-5 5-5v-3c-4.42 0-8 3.58-8 8h3z" />*/}
+            {/*                                    </svg>*/}
+            {/*                                    <span className="text-xl font-light text-gray-700 tracking-wide">*/}
+            {/*                                            {partner.text}*/}
+            {/*                                        </span>*/}
+            {/*                                    <p className="text-xs text-gray-400">Loremipsum</p>*/}
+            {/*                                </div>*/}
+            {/*                            </div>*/}
+            {/*                        </div>*/}
+            {/*                    ))}*/}
+            {/*                </div>*/}
+
+            {/*                /!* Scroll Hint *!/*/}
+            {/*                <div className="text-center mt-2">*/}
+            {/*                    <p className="text-xs text-gray-400">← Swipe to see more →</p>*/}
+            {/*                </div>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+
+            {/*        /!* Trust Badge *!/*/}
+            {/*        <div className="text-center mt-6">*/}
+            {/*            <p className="text-sm text-gray-500">*/}
+            {/*                Trusted by <span className="font-semibold text-green-600">{partners.length}+</span> industry leaders*/}
+            {/*            </p>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+
+            {/*    <style jsx>{`*/}
+            {/*                .scrollbar-hide::-webkit-scrollbar {*/}
+            {/*                  display: none;*/}
+            {/*                }*/}
+            {/*                .scrollbar-hide {*/}
+            {/*                  -ms-overflow-style: none;*/}
+            {/*                  scrollbar-width: none;*/}
+            {/*                }*/}
+            {/*            `}*/}
+            {/*    </style>*/}
+            {/*</section>*/}
+
             {/*/!*About Us Section*!/*/}
-            <section className="py-12 sm:py-16 lg:py-20 px-4 bg-gradient-to-b from-white to-gray-50">
+            <section className="py-12 sm:py-16 lg:py-20 font-[Outfit] px-4 bg-gradient-to-b from-white to-gray-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-wrap lg:flex-nowrap sm:flex-row-reverse gap-8 items-start">
                         {/* Right Side - Content */}
-                        <div className={`lg:flex-1`}>
-                            {/*About us Introduction*/}
-                            <div className={`flex flex-col space-y-4`}>
-                                <span className="text-green-500 font-medium font-[Mali] text-3xl ">About Us</span>
-                                {/*<h2 className="text-3xl sm:text-3xl lg:text-4xl font-[Outfit] text-gray-800 leading-tight mb-2">/!* CHANGED FOR MOBILE: responsive heading *!/*/}
-                                {/*    About Us*/}
-                                {/*</h2>*/}
+                        <div className="lg:flex-1">
+                            {/* About us Introduction */}
+                            <div className="flex flex-col space-y-4 mb-8">
+                                <span className="text-green-600 font-[mali] font-medium text-lg tracking-wide uppercase">About Us</span>
+                                <h2 className="text-4xl sm:text-5xl font-serif text-gray-800 leading-tight">
+                                    Cultivating Growth, Nurturing Communities
+                                </h2>
 
-                                <p className="text-gray-600 font-[Outfit] leading-relaxed mb-3">
-                                    Achigreens is a dynamic and versatile farming enterprise dedicated to advancing modern agriculture across Africa. Over the years, we have established ourselves as a trusted name in sustainable farming, agricultural consultancy, and the supply of fresh, high-quality produce.
+                                <p className="text-gray-600 text-lg leading-relaxed">
+                                    Achigreens is a dynamic and versatile farming enterprise dedicated to advancing modern agriculture across Nigeria. Over the years, we have established ourselves as a trusted name in sustainable farming, agricultural consultancy, and the supply of fresh, high-quality produce.
+                                </p>
+
+                                <p className="text-gray-600 text-lg leading-relaxed">
                                     Our mission is to connect people to healthier living by cultivating nutritious food, supporting eco-friendly farming practices, and empowering communities through agricultural education and innovation.
                                 </p>
                             </div>
 
+                            {/* Vision Section */}
+                            <div className="max-w-6xl m-auto gap-6 mb-8 pb-8 flex flex-col space-y-10 md:flex-row border-b border-gray-200">
+                                <div className="flex items-start gap-4">
 
-                            {/* Mission & Vision Buttons */}
-                            <div className="space-y-4 font-[Outfit] text-center ">
-
-                                <div className="w-full flex flex-col items-center p-4 bg-yellow-400 hover:bg-yellow-500 rounded-2xl transition-colors group shadow-lg ">
-                                    <span className="text-lg font-semibold text-gray-800">Mission Statement</span>
-                                    <p className="text-gray-600 leading-relaxed">
-                                        To cultivate growth through innovation, education, and integrity, transforming agriculture into a tool for better living, stronger communities, and a greener planet.
-                                    </p>
+                                    <div className="flex-1">
+                                        <h3 className="text-2xl font-bold text-gray-800 mb-3">Our Mission</h3>
+                                        <p className="text-gray-600 leading-relaxed">
+                                            To cultivate growth through innovation, education, and integrity, transforming agriculture into a tool for better living, stronger communities, and a greener planet. We are committed to sustainable practices that benefit both people and the environment.
+                                        </p>
+                                    </div>
                                 </div>
 
-                                <div className="w-full flex flex-col items-center p-4 bg-green-600 hover:bg-green-700 rounded-2xl transition-colors group shadow-lg">
-                                    <span className="text-lg font-semibold text-white">Our Mission & Vision</span>
-                                    <p className="text-gray-200 leading-relaxed">
-                                        To be a leading force in sustainable agriculture, one that inspires healthier communities, nurtures the environment, and sets new standards in agricultural excellence.
-                                    </p>
+                                <div className="flex items-start gap-4">
+                                    <div className="flex-1">
+                                        <h3 className="text-2xl font-bold text-gray-800 mb-3">Our Vision</h3>
+                                        <p className="text-gray-600 leading-relaxed">
+                                            To be a leading force in sustainable agriculture, one that inspires healthier communities, nurtures the environment, and sets new standards in agricultural excellence. We envision a future where farming is synonymous with innovation, sustainability, and prosperity.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Core Values */}
+                            <div className="mb-8">
+                                <div className="flex items-start gap-4 mb-4">
+                                    <div className="flex-shrink-0 w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                                        <Leaf className="text-emerald-600" size={24} />
+                                    </div>
+                                    <div className="flex-1">
+                                        <h3 className="text-2xl font-bold text-gray-800 mb-3">Our Core Values</h3>
+                                    </div>
                                 </div>
 
-                                <div className="w-full flex flex-col items-center p-4 bg-lime-400 hover:bg-lime-500 rounded-2xl transition-colors group shadow-lg">
-                                    <span className="text-lg font-semibold text-white">Our Impact</span>
-                                    <p className="text-gray-600 leading-relaxed">
-                                        Achigreens has: Supported communities with reliable agricultural guidance and training, partnered with local and international organizations to promote sustainable farming. Empowered individuals and families to embrace healthier lifestyles through diet and natural therapies.
-                                    </p>
+                                <div className="grid sm:grid-cols-2 gap-4 lg:ml-16">
+                                    <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-green-500">
+                                        <h4 className="font-semibold text-gray-800 mb-1">Sustainability</h4>
+                                        <p className="text-sm text-gray-600">Eco-friendly practices that protect our environment for future generations</p>
+                                    </div>
+                                    <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-yellow-400">
+                                        <h4 className="font-semibold text-gray-800 mb-1">Innovation</h4>
+                                        <p className="text-sm text-gray-600">Embracing modern techniques and technology to improve agricultural outcomes</p>
+                                    </div>
+                                    <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-emerald-500">
+                                        <h4 className="font-semibold text-gray-800 mb-1">Community</h4>
+                                        <p className="text-sm text-gray-600">Empowering local farmers and building stronger agricultural networks</p>
+                                    </div>
+                                    <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-teal-500">
+                                        <h4 className="font-semibold text-gray-800 mb-1">Quality</h4>
+                                        <p className="text-sm text-gray-600">Delivering premium products and services that exceed expectations</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Impact Section */}
+                            <div className=" p-6 rounded-2xl border border-green-100">
+                                <div className="flex items-start gap-4">
+                                    <div className="hidden flex-shrink-0 w-12 h-12 bg-white rounded-xl lg:flex items-center justify-center shadow-sm">
+                                        <TrendingUp className="text-green-600" size={24} />
+                                    </div>
+                                    <div className="flex-1">
+                                        <h3 className="text-2xl font-bold text-gray-800 mb-3">Our Impact</h3>
+                                        <p className="text-gray-700 leading-relaxed mb-4">
+                                            Achigreens has made significant strides in transforming agricultural practices across the region:
+                                        </p>
+                                        <ul className="space-y-2 text-gray-700">
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-green-600 font-bold mt-1">•</span>
+                                                <span>Supported communities with reliable agricultural guidance and training programs</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-green-600 font-bold mt-1">•</span>
+                                                <span>Partnered with local and international organizations to promote sustainable farming practices</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-green-600 font-bold mt-1">•</span>
+                                                <span>Empowered individuals and families to embrace healthier lifestyles through nutritious food and natural therapies</span>
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-green-600 font-bold mt-1">•</span>
+                                                <span>Created employment opportunities and economic growth within farming communities</span>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         {/*Left Side*/}
-                        <div className="hidden lg:block place-items-center lg:flex-1  m-auto mx-auto  relative">
-                            {/* Main Image */}
-                            <div className="relative w-3/4 rounded-3xl overflow-hidden shadow-2xl">
-                                <img
-                                    src={`${Images.about_us_temp}`}
-                                    alt="Farmer with milk bottle"
-                                    className="object-cover"
-                                />
-                            </div>
-                        </div>
+                        {/*<div className="hidden lg:block place-items-center lg:flex-1  m-auto mx-auto  relative">*/}
+                        {/*    /!* Main Image *!/*/}
+                        {/*    <div className="relative w-3/4 rounded-3xl overflow-hidden shadow-2xl">*/}
+                        {/*        <img*/}
+                        {/*            src={`${Images.about_us_temp}`}*/}
+                        {/*            alt="Farmer with milk bottle"*/}
+                        {/*            className="object-cover"*/}
+                        {/*        />*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
 
                     </div>
                 </div>
@@ -636,16 +729,23 @@ export default function Home() {
                     {/* Products Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {filteredProducts.map((product) => (
-                            <ProductCard key={product.id} product={product} onAddToCart={handleAddToCart} />
+
+                            <ProductCard key={product.id} product={product} handlePlaceOrder={handlePlaceOrder} />
                         ))}
                     </div>
                 </div>
             </section>
 
+            <ProductOrderModal
+                product={selectedProduct}
+                isOpen={isModalOpen}
+                onClose={closeModal}
+            />
+
             {/* Contact Section */}
             <section className="py-20 px-4">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 place-items-center items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center items-center">
                         {/* Left Side Main Image */}
                         <div className="hidden lg:block relative w-3/4 rounded-3xl overflow-hidden shadow-2xl">
                             <img

@@ -13,11 +13,14 @@ function App() {
   return (
     <>
         <Header />
+        {/*<div className={`mt-24`}>*/}
             <Routes >
                 <Route path={`/`} element={<Home />}/>
                 <Route path={`/privacy-policy`} element={<PrivacyPolicyPage />}/>
                 <Route path={`/terms`} element={<TermsConditionsPage />}/>
             </Routes>
+        {/*</div>*/}
+
         <Footer />
     </>
   )

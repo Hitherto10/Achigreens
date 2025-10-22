@@ -28,6 +28,13 @@ import gallery_vertical_3 from './assets/Images/gallery_vertical_3.jpg'
 import gallery_vertical_4 from './assets/Images/gallery_vertical_4.jpg'
 import gallery_vertical_5 from './assets/Images/gallery_vertical_5.jpg'
 
+import Chidinma from './assets/Images/Chidinma.jpg'
+import Ekene from './assets/Images/Ekene.jpg'
+import Grace from './assets/Images/Grace.jpg'
+import Oladimeji from './assets/Images/Oladimeji.jpg'
+import Tunde from './assets/Images/Tunde.jpg'
+
+
 export const Images = {
     hero_section_image,
     logo_1,
@@ -57,6 +64,11 @@ export const Images = {
     gallery_vertical_3,
     gallery_vertical_4,
     gallery_vertical_5,
+    Chidinma,
+    Ekene,
+    Grace,
+    Oladimeji,
+    Tunde,
 }
 
 
