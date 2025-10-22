@@ -59,14 +59,14 @@ export default function Footer() {
                             We have been operating for over a decade, providing top-notch services to our clients and building a strong track record.
                         </p>
                         <div className="flex gap-3">
-                            <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <a target={`_blank`} href="https://www.facebook.com/share/19znSd8DKp/" className="w-9 h-9 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
                                 <Facebook size={18} />
                             </a>
-                            <a href="#" className="w-9 h-9 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <a target={`_blank`} href="https://www.instagram.com/achigreens?igsh=em11azY2OHBpMjdh" className="w-9 h-9 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
                                 <Instagram size={18} />
                             </a>
 
-                            <a className="w-9 h-9 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <a href="tel:+2348177111731" className="w-9 h-9 sm:w-10 sm:h-10 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
                                 <Phone size={18} />
                             </a>
 
@@ -135,8 +135,8 @@ export default function Footer() {
                         © 2025 Achigreens. All rights reserved. Website by PrimeWave Tech.
                     </p>
                     <div className="flex gap-6 sm:gap-8">
-                        <a href="#" className="text-gray-400 hover:text-green-400 text-xs sm:text-sm transition-colors">Privacy Policy</a>
-                        <a href="#" className="text-gray-400 hover:text-green-400 text-xs sm:text-sm transition-colors">Terms of Service</a>
+                        <a href="/privacy-policy" className="text-gray-400 hover:text-green-400 text-xs sm:text-sm transition-colors">Privacy Policy</a>
+                        <a href="/terms" className="text-gray-400 hover:text-green-400 text-xs sm:text-sm transition-colors">Terms of Service</a>
                     </div>
                 </div>
             </div>

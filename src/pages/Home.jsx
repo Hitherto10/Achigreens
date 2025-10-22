@@ -111,11 +111,11 @@ export default function Home() {
                                 A dynamic and versatile farming business, that has proved itself in several aspects of farming
                                 over time.
                             </p>
-                            <div className="flex items-center gap-4 sm:gap-6 pt-2 sm:pt-4">{/* CHANGED FOR MOBILE: tighter spacing */}
-                                <button className="border-2 font-[Outfit] border-green-500 text-green-600 px-4 py-2 rounded-full hover:bg-green-50 transition-colors">{/* CHANGED FOR MOBILE: smaller padding */}
-                                    Find Out More →
-                                </button>
-                            </div>
+                            {/*<div className="flex items-center gap-4 sm:gap-6 pt-2 sm:pt-4">/!* CHANGED FOR MOBILE: tighter spacing *!/*/}
+                            {/*    <button className="border-2 font-[Outfit] border-green-500 text-green-600 px-4 py-2 rounded-full hover:bg-green-50 transition-colors" onClick={() => handleNavClick('contact')}>/!* CHANGED FOR MOBILE: smaller padding *!/*/}
+                            {/*        Find Out More →*/}
+                            {/*    </button>*/}
+                            {/*</div>*/}
                         </div>
 
                         {/* Right Content - Image with Geometric Shapes */}
