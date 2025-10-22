@@ -9,6 +9,7 @@ import { Mail, MessageSquare, User, Briefcase } from 'lucide-react';
 import ContactForm from "../components/Contact_form.jsx";
 import ProductOrderModal from "../components/ProductOrderModal.jsx";
 import Counter from "../components/Counter.jsx";
+import {NavLink} from "react-router-dom";
 
 export default function Home() {
     const [activeCategory, setActiveCategory] = useState('All');
@@ -771,13 +772,13 @@ export default function Home() {
                             <div className="mt-6 pt-6 border-t border-gray-200">
                                 <p className="text-xs text-gray-500 leading-relaxed">
                                     By submitting this form, you agree to our{' '}
-                                    <a href="/privacy-policy" className="text-green-600 hover:text-green-700 underline font-medium">
+                                    <NavLink to="/privacy-policy" className="text-green-600 hover:text-green-700 underline font-medium">
                                         Privacy Policy
-                                    </a>{' '}
+                                    </NavLink>{' '}
                                     and{' '}
-                                    <a href="/terms" className="text-green-600 hover:text-green-700 underline font-medium">
+                                    <NavLink to="/terms" className="text-green-600 hover:text-green-700 underline font-medium">
                                         Terms & Conditions
-                                    </a>
+                                    </NavLink>
                                     . We respect your privacy and will only use your information to respond to your inquiry and provide relevant updates about our services.
                                 </p>
                             </div>

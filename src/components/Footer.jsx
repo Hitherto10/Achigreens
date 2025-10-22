@@ -2,6 +2,7 @@ import React from 'react';
 import {Facebook, Instagram , Linkedin, Mail, MapPin, Phone, Twitter} from "lucide-react";
 import {Images} from "../images.jsx";
 import { services as servicesData } from "../data/siteContent.js";
+import {NavLink} from "react-router-dom";
 
 export default function Footer() {
     const smoothScrollTo = (targetId) => {
@@ -135,8 +136,8 @@ export default function Footer() {
                         © 2025 Achigreens. All rights reserved. Website by PrimeWave Tech.
                     </p>
                     <div className="flex gap-6 sm:gap-8">
-                        <a href="/privacy-policy" className="text-gray-400 hover:text-green-400 text-xs sm:text-sm transition-colors">Privacy Policy</a>
-                        <a href="/terms" className="text-gray-400 hover:text-green-400 text-xs sm:text-sm transition-colors">Terms of Service</a>
+                        <NavLink to="/privacy-policy" className="text-gray-400 hover:text-green-400 text-xs sm:text-sm transition-colors">Privacy Policy</NavLink>
+                        <NavLink to="/terms" className="text-gray-400 hover:text-green-400 text-xs sm:text-sm transition-colors">Terms of Service</NavLink>
                     </div>
                 </div>
             </div>
