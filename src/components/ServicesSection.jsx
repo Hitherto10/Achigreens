@@ -1,8 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Sprout, Users, Leaf, Tractor, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 export default function ServicesSection({ services = [] }) {
   const [selectedService, setSelectedService] = useState(services[0]?.key || null);
+
+  useEffect(() => {
+    const handler = (e) => {
+      const key = (e?.detail && (e.detail.key || e.detail)) ?? null;
+      if (key != null) {
+        setSelectedService(key);
+      }
+    };
+    window.addEventListener('activateService', handler);
+    return () => window.removeEventListener('activateService', handler);
+  }, []);
 
   const currentService = services.find(s => s.key === selectedService) || services[0];
 

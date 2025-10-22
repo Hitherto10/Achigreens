@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {ChevronDown, Phone} from "lucide-react";
 // Assumed imports
 // import {navItems} from "../data/siteContent.js";
@@ -9,6 +9,43 @@ import {navItems} from "../data/siteContent.js";
 
 export default function Header() {
     const [openDropdown, setOpenDropdown] = useState(null);
+    const [mobileOpen, setMobileOpen] = useState(false);
+
+    const mapNavKeyToId = useCallback((key) => {
+        switch (key) {
+            case 'home': return 'home';
+            case 'about': return 'about';
+            case 'products': return 'products';
+            case 'service': return 'services';
+            case 'contact': return 'contact';
+            default: return key;
+        }
+    }, []);
+
+    const smoothScrollTo = useCallback((targetId) => {
+        const el = document.getElementById(targetId);
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (targetId === 'home') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }, []);
+
+    const handleNavClick = useCallback((itemKey) => {
+        const id = mapNavKeyToId(itemKey);
+        smoothScrollTo(id);
+        // Close mobile if open
+        setMobileOpen(false);
+    }, [mapNavKeyToId, smoothScrollTo]);
+
+    useEffect(() => {
+        if (mobileOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => { document.body.style.overflow = ''; };
+    }, [mobileOpen]);
 
     return (
         // The outer <header> tag was removed here.
@@ -61,7 +98,7 @@ export default function Header() {
                                     onMouseEnter={() => item.hasDropdown && setOpenDropdown(item.label)}
                                     onMouseLeave={() => setOpenDropdown(null)}
                                 >
-                                    <button className="flex hover:cursor-pointer items-center gap-1 text-gray-700 hover:text-teal-700 transition-colors">
+                                    <button onClick={() => handleNavClick(item.key)} className="flex hover:cursor-pointer items-center gap-1 text-gray-700 hover:text-teal-700 transition-colors">
                                         {item.label}
                                         {item.hasDropdown && <ChevronDown size={16} />}
                                     </button>
@@ -69,23 +106,59 @@ export default function Header() {
                             ))}
 
                             {/* CHANGED FOR MOBILE: hide on mobile */}
-                            <button className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full hidden md:inline-flex items-center gap-2 transition-colors">
+                            <button onClick={() => handleNavClick('contact')} className="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full hidden md:inline-flex items-center gap-2 transition-colors">
                                 Contact Us →
                             </button>
                         </div>
 
-                        {/* TODO: Placeholder for mobile hamburger menu - no JS logic implemented */}
+                        {/* Mobile hamburger menu */}
                         <div className="md:hidden">
-                            <button className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none">
+                            <button onClick={() => setMobileOpen(v => !v)} className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none">
                                 <span className="sr-only">Open main menu</span>
-                                <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                                </svg>
+                                {!mobileOpen ? (
+                                    <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+                                ) : (
+                                    <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                )}
                             </button>
                         </div>
                     </div>
                 </div>
             </nav>
+
+            {/* Mobile Overlay Menu */}
+            {mobileOpen && (
+                <div className="fixed inset-0 z-50 bg-white/95 backdrop-blur-sm px-6 py-10 overflow-y-auto">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="flex justify-between items-center mb-8">
+                            <div className="flex items-center gap-2">
+                                <img src={`${Images.logo_2}`} alt="Logo" className="w-10" />
+                                <span className="text-xl font-serif text-teal-900">AchiGreens</span>
+                            </div>
+                            <button aria-label="Close menu" className="p-2 rounded-md hover:bg-gray-100" onClick={() => setMobileOpen(false)}>
+                                <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <nav className="flex flex-col gap-4">
+                            {navItems.map((item) => (
+                                <button key={item.key} className="text-lg text-gray-800 text-left py-3 border-b border-gray-100" onClick={() => handleNavClick(item.key)}>
+                                    {item.label}
+                                </button>
+                            ))}
+                            <button className="mt-4 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full w-fit" onClick={() => handleNavClick('contact')}>
+                                Contact Us →
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+            )}
         </>
     )
 }

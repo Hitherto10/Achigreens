@@ -96,7 +96,7 @@ export default function Home() {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Hero Section */}
-            <section className="relative overflow-hidden bg-[#eff3ed]">
+            <section id="home" className="relative overflow-hidden bg-[#eff3ed]">
                 <div className="max-w-7xl mx-auto px-4 py-12 sm:py-16 lg:py-20">{/* CHANGED FOR MOBILE: reduced padding */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">{/* CHANGED FOR MOBILE: single column */}
                         {/* Left Content */}
@@ -224,7 +224,7 @@ export default function Home() {
             </section>
 
             {/*Services Section*/}
-            <section className="py-6 px-4">
+            <section id="services" className="py-6 px-4">
                 <div className="max-w-7xl mx-auto">
                     {/* Section Header */}
                     <div className="text-center mb-12">
@@ -368,7 +368,7 @@ export default function Home() {
             </section>
 
             {/*/!* Testimonials & Collage Section *!/*/}
-            <section className="pt-12 sm:pt-16 lg:pt-20 px-4">{/* CHANGED FOR MOBILE: reduced top padding */}
+            <section id="testimonials" className="pt-12 sm:pt-16 lg:pt-20 px-4">{/* CHANGED FOR MOBILE: reduced top padding */}
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
 
@@ -571,7 +571,7 @@ export default function Home() {
             {/*</section>*/}
 
             {/*/!*About Us Section*!/*/}
-            <section className="py-12 sm:py-16 lg:py-20 font-[Outfit] px-4 bg-gradient-to-b from-white to-gray-50">
+            <section id="about" className="py-12 sm:py-16 lg:py-20 font-[Outfit] px-4 bg-gradient-to-b from-white to-gray-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-wrap lg:flex-nowrap sm:flex-row-reverse gap-8 items-start">
                         {/* Right Side - Content */}
@@ -696,7 +696,7 @@ export default function Home() {
             </section>
 
             {/* Products Section */}
-            <section className="py-12 sm:py-16 lg:py-20 px-4 bg-white">{/* CHANGED FOR MOBILE: reduced padding */}
+            <section id="products" className="py-12 sm:py-16 lg:py-20 px-4 bg-white">{/* CHANGED FOR MOBILE: reduced padding */}
                 <div className="max-w-7xl mx-auto">
                     {/* Header */}
                     <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-4 md:gap-6 mb-8 sm:mb-10 lg:mb-12">{/* CHANGED FOR MOBILE: stack header */}
@@ -743,7 +743,7 @@ export default function Home() {
             />
 
             {/* Contact Section */}
-            <section className="py-20 px-4">
+            <section id="contact" className="py-20 px-4">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center items-center">
                         {/* Left Side Main Image */}

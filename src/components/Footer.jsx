@@ -1,8 +1,41 @@
 import React from 'react';
 import {Facebook, Instagram , Linkedin, Mail, MapPin, Phone, Twitter} from "lucide-react";
 import {Images} from "../images.jsx";
+import { services as servicesData } from "../data/siteContent.js";
 
 export default function Footer() {
+    const smoothScrollTo = (targetId) => {
+        const el = document.getElementById(targetId);
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (targetId === 'home') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
+
+    const quickLinkMap = {
+        Home: 'home',
+        'About Us': 'about',
+        Products: 'products',
+        Services: 'services',
+        Contact: 'contact'
+    };
+
+    const serviceTitleToKey = Object.fromEntries(servicesData.map(s => [s.title, s.key]));
+
+    const handleQuickLink = (label) => {
+        const targetId = quickLinkMap[label] || 'home';
+        smoothScrollTo(targetId);
+    };
+
+    const handleServiceClick = (title) => {
+        const key = serviceTitleToKey[title];
+        smoothScrollTo('services');
+        // Activate the specific service after scrolling starts
+        setTimeout(() => {
+            window.dispatchEvent(new CustomEvent('activateService', { detail: key }));
+        }, 400);
+    };
 
     return (
         <footer className="bg-teal-900 text-white pt-10 sm:pt-14 lg:pt-16 font-[Outfit] pb-8 px-4">
@@ -46,11 +79,13 @@ export default function Footer() {
                         <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">Quick Links</h3>
                         {/* CHANGED FOR MOBILE: tighter spacing */}
                         <ul className="space-y-2 sm:space-y-3">
-                            <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Home</a></li>
-                            <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">About Us</a></li>
-                            <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Products</a></li>
-                            <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Services</a></li>
-                            <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Contact</a></li>
+                            {Object.keys(quickLinkMap).map(label => (
+                                <li key={label}>
+                                    <button onClick={() => handleQuickLink(label)} className="text-gray-300 hover:text-green-400 transition-colors">
+                                        {label}
+                                    </button>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
@@ -60,11 +95,13 @@ export default function Footer() {
                         <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">Services</h3>
                         {/* CHANGED FOR MOBILE: tighter spacing */}
                         <ul className="space-y-2 sm:space-y-3">
-                            <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Agricultural Consultancy</a></li>
-                            <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Health & Nutrition</a></li>
-                            <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Training & Outreach</a></li>
-                            <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Farm Infrastructure</a></li>
-                            <li><a href="#" className="text-gray-300 hover:text-green-400 transition-colors">Waste & Environmental Management</a></li>
+                            {servicesData.map(svc => (
+                                <li key={svc.key}>
+                                    <button onClick={() => handleServiceClick(svc.title)} className="text-gray-300 hover:text-green-400 transition-colors">
+                                        {svc.title}
+                                    </button>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
