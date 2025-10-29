@@ -7,11 +7,13 @@ import Footer from "./components/Footer.jsx";
 import {Routes, Route } from "react-router-dom";
 import PrivacyPolicyPage from "./pages/PrivacyPolicy.jsx";
 import TermsConditionsPage from "./pages/TandC.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 function App() {
 
   return (
     <>
+        <ScrollToTop />
         <Header />
         {/*<div className={`mt-24`}>*/}
             <Routes >

@@ -83,7 +83,7 @@ export default function Home() {
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const categories = ['All', 'Fresh', 'Organic', 'Vegetables'];
+    const categories = ['All', 'Spice', 'Starchy', 'Roots', 'Vegetables'];
 
     const handlePlaceOrder = (product) => {
         setSelectedProduct(product);
